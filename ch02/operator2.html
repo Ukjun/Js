@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>연산자(operator)</h3>
+    <p>
+        3. 비교(관계)연산자 : >, >=, <, <=, ==, !=, ===, !==(JavaScript에서 추가)<br>
+        - 결과가 논리값 형태로 표현 true or false<br>
+        - ===, !=== : 값과 타입을 한꺼번에 비교한 후 true or false을 출력하게 된다.<br>
+        - 우선순위 : (>, >=, <, <=) 연산자가 (== !=)보다 우선적으로 계산된다.<br>
+        - 우선순위 : (== !=)연산자가 (=== !===)보다 우선적으로 계산된다.<br>
+
+        4. 논리연산자 :&&(논리 AND), ||(논리 OR), !(논리 NOT, 부정)<br>
+        - 논리연산자의 결과는 논리값(true, false)로 나오게된다.<br>
+        - 비교연산자가 논리연산자보다 우선으로 계산.(비교>논리)<br>
+        - AND가 OR보다 우선적으로 계산된다.(!(NOT) > &&(AND) > ||(OR))<br>
+    </p>
+    <script>
+        var a = "10" ,b=10;
+        console.log("a 값 : " +a);
+        console.log("a 타입 : " +typeof a);
+        console.log("b 값 : " +b);
+        console.log("b 타입 : " +typeof b);
+
+
+        //값 비교만 하는 조건문
+        console.log("a==b : "+(a==b));
+
+        console.log("a!=b : "+(a!=b));
+
+
+        //값 + Type까지 비교하는 조건문(둘다 맞아야 true)
+        console.log("a===b : "+(a===b));
+
+        console.log("a!==b : "+(a!==b));
+
+        //논리연산자 예시
+
+        var x =30; y = 10, z=x>20&&y<20;
+        console.log("변수 z의 값 : "+z);
+
+    </script>
+</body>
+</html>

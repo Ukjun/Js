@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--
+    입력창을 통해 교통비, 식비, 음료비를 입력받아서 변수에 저장, price1~3
+    하루 적정 지출 비용은 10000 / 이 금액을 얼마나 초과했는지 출력
+    만약 적다면 '돈 관리를 잘 했어요라고 출력'
+-->
+<body>
+    <script>
+        var limit = 10000;
+        
+        var num1 = parseInt(prompt("교통비 입력"));
+        var num2 = prompt("식비 입력");
+        var num3 = prompt("음료비 입력");
+        var result = num1+Number(num2)+Number(num3);
+        //var result = Number(num1)+Number(num2)+Number(num3);
+        // if(result>limit){
+        //     document.write((result-limit)+'원 만큼 초과해서 사용하셨습니다.');
+        // }else{
+        //     document.write("돈 관리를 잘 하셨군요");
+        // }
+        if(result>limit?document.write((result-limit)+'원 만큼 초과해서 사용하셨습니다.')
+        :document.write("돈 관리를 잘 하셨군요"));
+    </script>
+</body>
+</html>
