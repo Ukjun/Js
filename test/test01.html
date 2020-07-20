@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--
+    태어난년도를 값 변수에 저장한다.
+    출생년도로부터  자신의 나이를 구해서 출력
+-->
+<body>
+    <script>
+        var thisDate = new Date();
+        var thisYear = thisDate.getFullYear();
+        var age = prompt('출생년도를 입력하세요');
+        document.write('당신의 나이는: ',thisYear-age+1)
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--
+    확인창으로부터 메세지 전달받은 후 전등의 점등/소등을 결정하는 변수 저장
+    그 변수값으로부터 점등/소등 여부를 브라우저 화면에 메세지와 함께 이미지 출력
+-->
+<style>
+
+</style>
+<body>
+    <script>
+        var message = confirm('Do you want turnoff?');
+        var msg_true = "Light on";
+        //msg_true.css('text-align','center');
+        document.body.style.textAlign="center";
+        if(message == true){
+           
+           document.write("<img src=\"lighton.png\" width=200,height=200><br>");
+           document.write(msg_true);
+        }else{
+            document.write("<img src=\"lightoff.png\" width=200,height=200><br>");
+            document.write("Light Off");
+        }
+    </script>
+</body>
+</html>

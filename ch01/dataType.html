@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>자바스크립트의 자료형(Data Type)</h3>
+    <p>
+        1. 기본형  <br>
+
+        1) 숫자형(number) : ':' 없이 표기한 숫자<br>
+        - 정수와 실수라고 구분하지 않는다.
+        2) 문자형(String) : 값을 따옴표로 써서 표기한 문자<br>
+        3) 논리형 : 값을 true, false로 표현한다.<br>
+        4) undefined형 : 선언하고 초기화되지 않은 자료형<br>
+
+        2. 복합형 
+        1) array형(배열) : 하나의 변수에 여러 개의 값을 저장하는 자료형<br>
+        2) object형(객체) : 함수와 속성이 포함된 자료형<br>
+    </p>
+    <script>
+        //undefined : 변수가 처음에 초기화되지않음
+        //typeof : 변수의 타입을 확인하기 위해 사용한다 
+        //javascript 는 null도 객체로 취급을한다
+        var a = 10, b= 20 ,c;
+        c= a+b;
+        console.log("result : ",c);
+
+        d= null;
+        console.log("result : ",d);
+        console.log("type : "+ typeof d);
+
+        var s = "JavaScript";
+        console.log("result: ",s);
+        console.log("Datatype: ",typeof s);
+        
+        var x = 20, y=10;
+        console.log(x>y);
+    </script>
+</body>
+</html>

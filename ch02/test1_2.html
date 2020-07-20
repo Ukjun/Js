@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--
+    1분기 : 1200, 2분기 : 1300, 3분기 : 1000 판매량 고정
+    입력창으로부터 4분기 판매량 받음 1, 2, 3분기의 평균판매량과 비교 많으면 '평균이상', 적으면'평균이하'
+    삼항식을 쓸 것 
+-->
+<body>
+    <script>
+        var price1 = 1200;
+        var price2 = 1300;
+        var price3 = 1000;
+        var avg = Math.round((price1+price2+price3)/3);
+        var price4 = prompt("4분기 판매량");
+        // if(price4>=avg){
+        //     document.write("4분기 판매량은 "+price4+"으로 이전 판매량 "+ avg+ "보다 평균이상");
+        // }else{
+        //     document.write("4분기 판매량은 "+price4+"으로 이전 판매량 "+ avg+ "보다 평균이하");
+        // }
+        if(price4>=avg?document.write("4분기 판매량은 "+price4+"으로 이전 판매량 "+ avg+ "보다 평균이상")
+        :document.write("4분기 판매량은 "+price4+"으로 이전 판매량 "+ avg+ "보다 평균이하"));
+    </script>
+</body>
+</html>

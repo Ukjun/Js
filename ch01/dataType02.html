@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>형변환 함수</h3>
+    <p>
+        데이터 타입(자료형)을 변환 하는 함수<br>
+        1. String() : 숫자를 문자로 변환하는 함수.<br>
+        2. Number() : 문자를 숫자로 변환하는 함수.<br>
+        3. Boolean() : 비논리형을 논리형으로 변환하는 함수<br>
+        - 논리형 : true, false 둘 중 하나<br>
+        - true : 문자열, 0을 제외한 숫자<br>
+        - false : 숫자0, null, undefined<br>
+        4. toString() : 숫자를 문자로 변환하는 함수<br>
+        5. parseInt() : 문자를 정수로 변환하는 함수<br>
+        6. parseFloat() : 문자를 실수로 변환하는 함수<br>
+    </p>
+    <script>
+        var a ="10", b=20, c;
+        c = Number(a)+b;
+        console.log("result: ",c);
+        console.log("Datatype : " ,typeof c);
+
+        var x = "ten";
+        x = Number(x);
+        console.log("result: ",x);
+        console.log("Datatype : " ,typeof x);
+
+        var y =100;
+        var z = String(y);
+        console.log("result: ",z);
+        console.log("Datatype : " ,typeof z);
+
+        var h = Boolean("JavaScript");
+        console.log("result: ",h);
+        console.log("Datatype : " ,typeof h); // 문자열을 사용했으므로 true가 된다.
+
+        h = Boolean(0);
+        console.log("result: ",h);
+        console.log("Datatype : " ,typeof h); // 0을 사용했으므로 false가 뜨게 된다
+
+        var g;
+        console.log("result: ",g);
+        console.log("Datatype : " ,typeof g); // 변수 선언만하고 초기화를 하지않음
+
+
+        ///toString()
+        var aa = 10;
+        aa = aa.toString(aa);
+        console.log("result: ",aa);
+        console.log("Datatype : " ,typeof aa );
+
+
+        var bb = "30"
+        bb = parseInt(bb);
+        console.log("result: ",bb);
+        console.log("Datatype : " ,typeof bb);
+
+        var cc = "3.14"
+        cc = parseFloat(cc);
+        console.log("result: ",cc);
+        console.log("Datatype : " ,typeof cc);
+    </script>
+</body>
+</html>
