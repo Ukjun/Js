@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--
+    입력창으로부터 가위/바위/보 중에 하나 입력받아서 브라우저 화면에 출력
+    결과 : (입력한 모양)을 입력하셧습니다
+-->
+<body>
+    <script>
+        var str = prompt('가위/바위/보 중에 입력하세요');
+        if(str=="바위"){
+           document.write("<img src=\"math_img_2.jpg\" width=200 height=200");
+        }else if(str=="보"){
+            document.write("<img src=\"math_img_3.jpg\" width=200 height=200");
+        }else{
+            document.write("<img src=\"math_img_1.jpg\" width=200 height=200");
+        }
+    </script>   
+</body>
+</html>
