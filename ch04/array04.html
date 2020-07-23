@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--
+    학생 2차원 배열의 정보를 출력하시오
+    평균 총점을 출력 ( 이름 , 전공, 중간, 기말)
+-->
+<style>
+    table{
+        border-collapse: collapse;
+        text-align: center;
+        width: 600px;
+        margin: 0 auto;
+    }
+    tr, td{
+        border: 1px solid black;
+        padding: 10px;
+    }
+    th{
+        border: 1px solid black;
+        background-color: #ffccff;
+        padding: 10px;
+    }
+</style>
+<body>
+    <script>
+        var student = new Array(
+            Array("김이이","컴공",88,76),
+            Array("양우석","수학",70,83),
+            Array("채솔화","물리",92,95),
+            Array("한정원","전자",85,92),
+            Array("김준환","기계",97,88),
+        );
+        var count=0;
+        var middle = [];
+        var final = [];
+        var tot_sum = [];
+        var avg_sum = [];
+        var num1 = 0;
+        var num2 = 0;
+        var num3 =0;
+        var num4=0;
+        document.write("<table>")
+        document.write("<caption><h2>2020 1학기 성적표</h2></caption>")
+            document.write("<tr>");
+            document.write("<th>이름</th>");
+            document.write("<th>전공</th>");
+            document.write("<th>중간고사</th>");
+            document.write("<th>기말고사</th>");
+            document.write("<th>합계</th>");
+            document.write("<th>평균</th>");
+            document.write("</tr>");
+        for(var i=0; i<student.length; i++){
+            var tot =0;
+            var avg =0;
+            
+            document.write("<tr>");
+            for(var j=0; j<student[i].length; j++){
+                document.write("<td>"+student[i][j]+"</td>");
+                middle[count] = student[i][2];
+                final[count] = student[i][3];
+                tot_sum[count] = Number(middle[count])+Number(final[count]);
+            }
+            
+            document.write("<td>"+tot_sum[count]+"</td>");
+            avg_sum[count] = Number(tot_sum[count]/2);
+            document.write("<td>"+avg_sum[count].toFixed(2)+"</td>");
+            document.write("</tr>");
+            count++;
+        }
+        for(var i=0; i<middle.length; i++){
+            num1 += middle[i];
+            num2 += final[i];
+            num3 += tot_sum[i];
+            num4 += avg_sum[i];
+        }
+        document.write("<tr>");
+        document.write("<td colspan='2'> -- </td>");
+        document.write("<td>"+ num1/middle.length+"</td>");
+        document.write("<td>"+ num2/final.length+"</td>");
+        document.write("<td>"+ num3/tot_sum.length+"</td>");
+        document.write("<td>"+ num4/avg_sum.length+"</td>");
+        document.write("</tr>");
+        document.write("</table>")
+    </script>
+</body>
+</html>
