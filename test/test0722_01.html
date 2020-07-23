@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--
+    입력창으로부터 정수를 입력받고 1부터 입력받은 수까지 1씩 증가 7의 배수만 제외
+    continue사용
+-->
+<body>
+    <script>
+        var num = Number(prompt('정수를 입력하세요'));
+        for (var i = 1; i<=num; i++){
+            if(i%7==0){
+                continue;
+            }
+            document.write(i+ " ");
+        }
+    </script>
+</body>
+</html>

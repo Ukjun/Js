@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--
+    자신이 태어난 월을 입력 받아 월에 탄생석과 상징을 보여주는 프로그램
+    출력 : 탄생석 이미지를 보여주고, 탄생월, 탄생석, 상징 메세지를 출력하세요
+    결과 화면 위에  <월별 탄생석과 상징> 먼저 표로 출력
+-->
+<style>
+    table{
+        width: 400px;
+        margin: 0 auto;
+        border-collapse: collapse;
+    }
+    td,th{
+        border: 1px solid black;
+        text-align: center;
+    }
+    .title{
+        background-color: cadetblue;
+    }
+</style>
+<body>
+    <table>
+        <caption><h3>월별 탄생석 프로그램</h3></caption>
+        <tr class="title">
+            <th>월</th><th>탄생석</th><th>상징</th>
+        </tr>
+        <div id="month1">
+            <tr>
+                <td>1월</td><td>가넷</td><td>사랑, 진실</td>
+            </tr>    
+        </div>
+        <tr>
+            <td>2월</td><td>자수정</td><td>평화, 성실</td>
+        </tr>
+        <tr>
+            <td>3월</td><td>아쿠아마린</td><td>총명, 용감</td>
+        </tr>
+        <tr>
+            <td>4월</td><td>다이아몬드</td><td>영원한 사랑</td>
+        </tr>
+        <tr>
+            <td>5월</td><td>에메랄드</td><td>행복, 행운</td>
+        </tr>
+        <tr>
+            <td>6월</td><td>진주</td><td>건강, 부귀</td>
+        </tr>
+        <tr>
+            <td>7월</td><td>루비</td><td>영원한생명, 열정, 용기</td>
+        </tr>
+        <tr>
+            <td>8월</td><td>감람석</td><td>지혜, 부부의행복</td>
+        </tr>
+        <tr>
+            <td>9월</td><td>사파이어</td><td>지혜, 불변</td>
+        </tr>
+        <tr>
+            <td>10월</td><td>오팔</td><td>희망, 순결</td>
+        </tr>
+        <tr>
+            <td>11월</td><td>토파즈</td><td>우정, 인내</td>
+        </tr>
+        <tr>
+            <td>12월</td><td>터키석</td><td>성공, 승리</td>
+        </tr>
+    </table>
+    <script>
+        function change(color){
+            var month1 = document.getElementById("month1");
+            month1.style.backgroundColor(color);
+        }
+         var month = Number(prompt('자신이 태어난 월을 입력하세요'));
+         switch(month){
+             case 1:
+                document.write("<img src=\"stone01.png\" width=200 height=200");
+                document.write("<br>1월 / 가넷 / 사랑, 진실");
+                change(yellow);
+                break;
+             case 2:
+                document.write("<img src=\"stone02.png\" width=200 height=200");
+                document.write("<br>2월 / 자수정 / 평화, 성실");
+                break;
+             case 3:
+                document.write("<img src=\"stone03.png\" width=200 height=200");
+                document.write("<br>3월 / 아쿠아마린 / 총명, 용감");
+                break;
+             case 4:
+                document.write("<img src=\"stone04.png\" width=200 height=200");
+                document.write("<br>4월 / 다이아몬드 / 영원한사랑");
+                break;
+             case 5:
+                document.write("<img src=\"stone05.png\" width=200 height=200");
+                document.write("<br>5월 / 에메랄드 / 행복, 행운");
+                break;
+             case 6:
+                document.write("<img src=\"stone06.png\" width=200 height=200");
+                document.write("<br>6월 / 진주 / 건강 부귀");
+                break;
+             case 7:
+                document.write("<img src=\"stone07.png\" width=200 height=200");
+                document.write("<br>7월 / 루비 / 영원한생명, 열정, 용기");
+                break;
+             case 8:
+                document.write("<img src=\"stone08.png\" width=200 height=200");
+                document.write("<br>8월 / 감람석 / 지혜, 부부의행복");
+                break;
+             case 9:
+                document.write("<img src=\"stone09.png\" width=200 height=200");
+                document.write("<br>9월 / 사파이어 / 지혜, 불변");
+                break;
+             case 10:
+                document.write("<img src=\"stone10.png\" width=200 height=200");
+                document.write("<br>10월 / 오팔 / 희망, 순결");
+                break;
+             case 11:
+                document.write("<img src=\"stone11.png\" width=200 height=200");
+                document.write("<br>11월 / 토파즈 / 우정, 인내");
+                break;
+             case 12:
+                document.write("<img src=\"stone12.png\" width=200 height=200");
+                document.write("<br>12월 / 터키석 / 성공, 승리");
+                break;
+         }
+    </script>
+</body>
+</html>

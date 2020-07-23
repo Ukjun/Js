@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--
+    창으로부터 정수를 입력받아서 출력
+    입력 : "정수입력: "
+    출력 : 1에서부터 입력받은수까지 출력 
+    홀수일때는 빨강 짝수일때는 파랑
+-->
+<style>
+    p{
+        display: inline-block;
+        padding-right: 10px;
+    }
+    .red{
+        color: red;
+    }
+    .blue{
+        color: blue;
+    }
+</style>
+<body>
+    <script>
+        var num = Number(prompt('정수 입력'));
+        for(var i=1; i<=num; i++){
+            if(i%2==0){
+                document.write("<p class='red'>"+i+"</p>");
+            }else{
+                document.write("<p class='blue'>"+i+"</p>");
+            }
+        }
+    </script>
+</body>
+</html>

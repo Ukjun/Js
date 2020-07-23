@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var id = "easy1004";
+        var pw = "112233";
+        var user_id = prompt("Press Your Id",""); //아무것도 입력하지 않을 경우를 대비해서 뒤에 ""를 적어놓는다
+                                                  //그럴경우 false 로 인식이 된다.
+        var user_pw = prompt('Press Your Password',"");
+        if(id==user_id){
+            if(pw==user_pw){
+                document.write(user_id+'님 반갑습니다.');
+            }else{
+                alert("Password is not correct");
+                location.reload();
+            }
+        }else{
+            alert("Id is not correct");
+            location.reload();
+        }
+    </script>
+</body>
+</html>

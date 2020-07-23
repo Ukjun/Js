@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        width: 800px;
+        margin: 0 auto;
+        border: 1px solid black;
+    }
+    h1{
+        text-align: center;
+    }
+    table{
+        border-collapse: collapse;
+        margin: 0 auto;
+    }
+    td,tr{
+        border: 1px solid black;
+        
+    }
+</style>
+<body>
+    <script>
+        var count=1;
+        var stones=["1월/가넷/사랑,진실","2월/자수정/평화,성실","3월/아쿠아마린/총명,용감","4월/다이아몬드/영원한사랑"
+        ,"5월 에메랄드/행복,행운","6월/진주/건강/부귀","7월/루비/영원한생명,열정,용기","8월/감람석/지혜,부부의행복",
+        "9월/사파이어/지혜,불변","10월/오팔/희망,순결","11월/토파즈/우정,안내","12월/터키석/성공,승리"]
+        document.write("<h1>월별 보석</h1>")
+        // document.write("<table>")
+        // for(var i=0; i<3;i++){
+        //     document.write("<tr>")
+        //     for(var j=0; j<4;j++){
+        //         document.write("<td><img src=\"stone0"+count+".png\" width=200 height=200<td><br>");
+        //         document.write(stones[count-1]);
+        //         count++;
+        //     }
+        //     document.write("</tr>")
+        // }
+        // document.write("</table>")
+        
+        document.write("<div class='container'>")
+        
+        for(var i=0; i<4; i++){
+            for(var j=0; j<3; j++){
+                document.write("<img src=\"stone0"+count+".png\" width=200 height=200<br>");
+                count++;
+            }
+        }
+        document.write("</div>")
+    </script>
+</body>
+</html>

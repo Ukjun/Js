@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        입력창으로부터 정수를 입력받아서 입력받은 수의 팩토리얼을 출력
+    -->
+    <script>
+        var num = Number(prompt('정수입력'));
+        var sum =1;
+        document.write(num+"!= ");
+        for(var i = num; i>=1; i--){
+            if(i>1){
+                sum *= i; 
+                document.write(i+" * ")
+            }else {
+                sum *= i; 
+                document.write(i+"= ")
+            }
+        }
+        document.write(sum);
+    </script>
+</body>
+</html>

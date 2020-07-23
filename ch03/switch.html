@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var menu = Number(prompt("메뉴를 선택하시오.(1~4)","0"));
+
+        if(menu==1) {
+            document.write('파일 열기');
+        } else if(menu==2) {
+            document.write('파일 읽기');
+        } else if(menu==3) {
+            document.write('파일 쓰기');
+        } else if(menu==4) {
+            document.write('파일 닫기');
+        } else {
+            document.write('잘못 입력하셨습니다 <br> 다시 입력하세요');
+        }
+
+        switch(menu){
+            case 1:
+                document.write('파일 열기');
+                break;
+            case 2:
+                document.write('파일 읽기');
+                break;
+            case 3:
+                document.write('파일 쓰기');
+                break;
+            case 4:
+                document.write('파일 닫기');
+                break;
+            default:
+                document.write('잘못 입력하셨습니다 <br> 다시 입력하세요');
+        }
+    </script>
+</body>
+</html>
