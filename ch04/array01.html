@@ -10,7 +10,23 @@
         //1.배열 출력
         var score = [44,55,66,22,78];
 
-        //2. 배열의 데이터를 확인(확인만 가능, )
+
+        var tot = 0;
+        for(var i=0; i<score.length; i++){
+            document.write(score[i]+" ");
+            tot += score[i];
+        }
+        var avg  = tot/score.length;
+        document.write("<br>의 총점 : "+ tot)
+        document.write("<br>의 평균 : "+ avg.toFixed(2))
+        // .toFixed(n) >> n번째 자리수까지 출력
+        document.write("<br>")
+
+        // 2. 배열의 곱을 출력하는 방법
+
+        for(var i in score){
+            
+        }
     </script>
 </body>
 </html>

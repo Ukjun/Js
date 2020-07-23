@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            //1. 각 반별로 총점과 평균을 구하여 출력하시오
+            var score = [
+                [95, 88, 76, 64],
+                [78, 63, 57, 92],
+                [77, 82, 67, 63, 81, 82]
+            ];
+            document.write(score+"<br>")
+            document.write("score의 갯수: "+ score.length + "<br>")
+            document.write("score의 갯수: "+ score[0].length + "<br>")
+            document.write("score의 갯수: "+ score[1].length + "<br>")
+            document.write("score의 갯수: "+ score[2].length + "<br>")
+
+            for(var i=0; i<score.length; i++){
+                var tot = 0;
+                var avg = 0;
+                for(var j=0; j<score[i].length; j++){
+                    tot += Number(score[i][j]);
+                }
+                avg = Number(tot/score[i].length);
+                document.write(i+"번행 합: " + tot+"<br>")
+                document.write(i+"번행 평균: " + avg.toFixed(2)+"<br>")
+            }
+        </script>
+    </body>
+</html>
