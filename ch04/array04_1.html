@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            width: 100px;
+            height: 50px;
+            border: 1px solid black;
+        }
+
+        td:nth-child(3),
+        td:nth-child(4) {
+            text-align: center;
+        }
+
+        td:last-child {
+            padding-left: 10px;
+        }
+
+        table:nth-child(2) th {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // var score = [
+        //     [95, 98, 76, 64, 73],
+        //     [78, 63, 57, 92],
+        //     [77, 82, 67, 63, 81, 82]
+        // ];
+        // var tempSum = 0;
+        // var tempCnt = 0;
+        // for (i = 0; i < score.length; i++) {
+        //     for (j = 0; j < score[i].length; j++) {
+        //         tempSum += score[i][j];
+        //         document.write(`score[${i}][${j}]의 값 : ${score[i][j]}<br>`);
+        //         tempCnt++;
+        //     }
+        // }
+        // document.write(`score 배열의 총합 : ${tempSum}<br>score 배열의 평균 : ${(tempSum / tempCnt).toFixed(1)}`);
+        var student = new Array(
+            Array("이익준", "컴공", 88, 76),
+            Array("양석형", "수학", 70, 83),
+            Array("채송하", "물리", 92, 95),
+            Array("안정원", "전자", 85, 92),
+            Array("김준완", "기계", 97, 88)
+        )
+        var tempTot = 0;
+        var tempAvg = 0;
+        document.write(`<table>`);
+        document.write(`<caption><h1>학생별 성적표</h1></caption>`);
+        document.write(`<tr><th>이름</th><th>전공</th><th>중간</th><th>기말</th><th>통계</th></tr>`);
+        for (i = 0; i < student.length; i++) {
+            document.write(`<tr>`);
+            var tempSum = 0;
+            var tempCnt = 0;
+            for (j = 0; j < student[i].length; j++) {
+                if (j < 2) {
+                    document.write(`<th>${student[i][j]}</th>`);
+                } else {
+                    tempSum += student[i][j];
+                    tempCnt++;
+                    tempTot += student[i][j];
+                    tempAvg++;
+                    document.write(`<td>${student[i][j]}점</td>`);
+                }
+            }
+            document.write(`<td>합계 : ${tempSum}점<br>평균 : ${(tempSum / tempCnt).toFixed(1)}점</td>`);
+            document.write(`</tr>`);
+        }
+        document.write(`<tr><th>총원 : ${tempAvg / 2}명</th><th colspan="2">총점 : ${tempTot}점</th><th colspan="2">총평균 : ${(tempTot / tempAvg).toFixed(1)}점</th></tr>`);
+        document.write(`</table>`);
+    </script>
+</body>
+
+</html>

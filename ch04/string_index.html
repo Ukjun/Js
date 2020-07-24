@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        width: 500px;
+        margin: 30 auto;
+    }
+    h2{
+        text-align : center;
+    }
+    label{
+        width: 100px;
+        display: inline-block;
+        margin-left: 100px;
+    }
+    label,input {
+        margin-bottom: 10px;
+    }
+    .btn{
+        text-align: center;
+    }
+</style>
+<body>
+    <div class="container">
+        <fieldset>
+            <h2>2020년 1학기 성적 결과</h2>
+        <form method="POST" name="input_form">
+            <label for="name">이름</label>
+            <input type="text" name="name" id="name">
+            <label for="kor">국어</label>
+            <input type="text" name="kor" id="kor">
+            <label for="math">수학</label>
+            <input type="text" name="math" id="math">
+            <label for="eng">영어</label>
+            <input type="text" name="eng" id="eng">
+            <div class="btn">
+            <button onclick="calc()">성적처리결과</button>
+        </div>
+        </form>
+    </fieldset>
+    <script>
+        function calc(){
+            var tot,avg = 0;
+            tot = Number(input_form['kor'].value)+
+            Number(input_form['math'].value)+
+            Number(input_form['eng'].value);
+            avg = tot/3;
+            alert(input_form['name'].value+"학생의 총점은 : "+ tot + "학생의 평균은"+avg+"입니다.")
+        }
+    </script>
+    </div>
+</body>
+</html>
