@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var date = new Date();
+        var date2 = new Date(2020,11,31);
+        document.write(date + "<br>");
+        document.write(date.toGMTString() + "<br>");
+        //지역별 스타일로 날짜 출력
+        document.write(date.toLocaleString() + "<br>"); 
+        document.write(date2 + "<br>");
+
+        var d1 = date.getTime(); //1970년 1월 1일 기준 >> 현재 얼마나 지났는지 확인
+        document.write(d1+" ms<br>"); // 1/1000초
+        document.write(d1/1000+" s<br>"); //초
+        document.write(d1/1000/60+" m<br>"); //분
+        document.write(d1/1000/60/60+" h<br>"); //시
+        document.write(d1/1000/60/60/24+" d<br>"); //일
+        document.write("<hr>")
+        document.write("<h2> 2020년 12월 31일까지 남은 일수 </h2>");
+
+
+        //abs() : 절대값(양수)
+        document.write(Math.abs(-10)+"<br>")
+        document.write(Math.abs(10)+"<br>")
+        //max,min() : 나열된 값 중에서 최대값/최소값을 구함. 
+        //문자열 비교불가, 숫자 문자열만 비교가능
+        //pow() : a의 b거듭제곱을 구함 a,b모두 정수 ,실수 가능
+        document.write(Math.pow(10,2)+"<br>");
+        document.write(Math.pow(3.5,2.2)+"<br>");
+        //random() : 0~1미만의 난수를 출력
+        //0~10사이의 난수
+        document.write(parseInt(Math.random()*11)+"<br>");
+        //1~10사이의 난수
+        document.write(parseInt(Math.random()*10)+1+"<br>");
+        //범위밖의 난수 -20~20사이의 난수
+        document.write(parseInt(Math.random()*41)-20+"<br>");
+        //round() : 반올림 함수
+        document.write(Math.round(5.5)+"<br>");
+        //ceil() : 소수점 첫번째 자리에서 무조건 올림하여 정수로 표현
+        document.write(Math.ceil(5.211123)+"<br>");
+        //floor() : 소수점 첫번째 자리에서 무조건 버림 함수.
+        document.write(Math.ceil(5.7811123)+"<br>");
+        //sqrt() : 루트값을 출력해주는 함수
+        document.write(Math.sqrt(9)+"<br>");
+        //PI함수 : 원주율을 출력
+        document.write(Math.PI+"<br>");
+    </script>
+</body>
+</html>

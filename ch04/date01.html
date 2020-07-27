@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var date1 = new Date();
+        var year = date1.getFullYear();
+        var month = date1.getMonth();
+        var day = date1.getDate();
+
+        var hour  = date1.getHours();
+        var min = date1.getMinutes();
+        var sec = date1.getSeconds();
+        var misec = date1.getMilliseconds();
+
+        var weekDay = date1.getDay();
+        document.write(date1+"<br>"); // 현재 시스템의 날짜 정보를 확인 가능
+        document.write(year+"년"+(month+1)+"월"+day+"일<br>");
+        document.write(hour + "시"+ min+ "분"+sec+"초"+misec+"밀리초<br>");
+
+        var weekDay2 = ['일','월','화','수','목','금','토'];
+
+        var date2 = new Date(2002,4,31); // 0~11, 4로 적으면 5월 우리나라처럼 1~12월이 아니다
+        var year = date2.getFullYear();
+        var month = date2.getMonth();
+        var day = date2.getDate();
+
+        document.write(date2+"<br>"); // 현재 시스템의 날짜 정보를 확인 가능
+        document.write(year+"년"+(month+1)+"월"+day+"일<br>");
+
+    </script>
+</body>
+</html>

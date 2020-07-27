@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr1 = ['가위','바위','보'];
+        var start = prompt("무엇을 낼지 정하세요");
+        var ran = parseInt(Math.random()*3);
+        var check =0;
+        document.write("<img src=\"math_img_"+(ran+1)+".jpg\" width=200 height=200<br><hr>");    
+
+
+        for(var i=0; i<arr1.length; i++){
+            if(start==arr1[i]){
+                document.write("<img src=\"math_img_"+(i+1)+".jpg\" width=200 height=200<br><hr>");
+                check = i;
+            }
+        }
+        
+    </script>
+</body>
+</html>

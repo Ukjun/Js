@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        width: 800px;
+        margin: 30px auto;
+    }
+    h2,h3{
+        text-align: center;
+    }
+    .content1{
+        width: 600px;
+        margin: 0 auto;
+    }
+    .content1 > img{
+        float: left;
+        padding: 20px;
+        margin-right: 40px;
+    }
+    .content1 ul{
+        list-style: none;
+        padding-top: 40px;
+        margin-top: 50px;
+    }
+    .content1 ul li{
+        margin-bottom: 15px;
+    }
+    .content1 li label{
+        width: 80px;
+        float: left;
+        text-align: right;
+        margin-right: 10px;
+    }
+    .content1 li input{
+        width: 150px;
+        padding: 10px;
+    }
+    .content1 li button{
+        width: 150px;
+        height: 35px;
+        text-align: center;
+        margin-left: 60px;
+        background-color: black;
+        color: white;
+        border: none;
+        font-weight: bold;
+        font-size: 0.9em;
+    }
+    .content1 li:nth-child(3){
+        /*n번째 자식만 적용*/
+        text-align: center;
+    }
+    .content1 li:nth-child(1){
+        margin-top: 30px;
+    }
+    #result{
+        clear: both;
+        margin-left: 180px;
+        margin-top: 30px;
+    }
+</style>
+<body>
+    <div class="container">
+        <h2>Korea Shop</h2>
+        <h3>Sale</h3>
+        <div class ="content1">
+            <img src = "sale.png" width="250" alt="">
+            <ul>
+                <li>
+                    <label for="price">정가(원)</label>
+                    <input type="text" id="price">
+                </li>
+                <li>
+                    <label for="rate">할인율(%)</label>
+                    <input type="text" id="rate">
+                </li>
+                <li>
+                    <button onclick="sale()">할인가격 계산하기</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="result">
+
+    </div>
+    <script>
+        function sale(){
+            var ori_price = document.querySelector('#price').value;
+            var ori_rate = document.querySelector('#rate').value;
+            
+            if(ori_price==0){
+                alert("가격을 적으세요");
+            }else if (ori_rate ==0){
+                alert("할인율을 적으세요!");
+            }else{
+                var result = ori_price-(ori_price*(ori_rate/100));
+                //브라우저로 출력 1
+                //document.write("정가 : " + ori_price + " 할인율 : " + ori_rate + "%\n 판매가"+Math.round(result)+"원");
+                //브라우저로 출력 2
+                document.querySelector('#result').innerHTML=
+                "정가 : " + ori_price + "<br>할인율 : " + ori_rate + "% <br>판매가 : "+Math.round(result)+"원";
+            }
+        }
+    </script>
+</body>
+</html>
