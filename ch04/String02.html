@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = "Hello Javascript world! Javascript"
+
+        // substr(a,b) : a번째 인덱스로부터 b개의 문자열 추출 
+        var str2 = str.substr(17,6);
+        document.write(str2 + "<br>");
+
+        // split() : 문자열에 특정문자를 기준으로 나누어 배열에 저장
+        var animals = "lion/tiger/bear/eagle/elephant/hippo"
+        var arr = animals.split("/");
+        for(var i in arr){
+            document.write(arr[i]+" ")
+        }
+        document.write("<br>")
+
+        // toLocalLowerCase() : 모든문자를 소문자로 변형
+        str2 = str.toLocaleLowerCase();
+        document.write(str2 + "<br>");
+
+
+        // toUpperCase() : 모든 문자를 대문자로 변형
+        str2 = str.toUpperCase();
+        document.write(str2 + "<br>");
+
+        // length() : 문자열 길이
+        document.write(str.length)
+
+        // concat() : 문자열을 연결하는 메소드
+        str3 = "자바스크립트"
+        str2 = str.concat(str3);
+        document.write(str2 + "<br>");
+
+        // charCodeAt() : 문자에 해당하는 아스키코드값을 반환
+        str3 = "ABCDEabced"
+        var a = str.charCodeAt(0);
+        document.write(a+"<br>")
+
+        // fromCharCode() : 아스키 코드에 해당하는 문자를 반환
+        var n3 = String.fromCharCode(66);
+        document.write(n3 + "<br>")
+
+
+        // trim() : 문자열 앞뒤의 공백을 제거 ( oracle 과 동일 )
+    </script>
+</body>
+</html>

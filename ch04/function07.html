@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        호이스팅(Hoisting)
+        :함수 정의부분보다 함수 사용이 먼저 나올 때, 함수 정의부분을 
+        코드의 상단으로 끌어올려 먼저 사용하도록 하는 방법이다.
+        기본 함수는 호이스팅을 지원하나, 익명함수는 호이스팅을 지원하지 않음
+    -->
+    <script>
+        //함수호출 
+        f1();
+        //함수 정의
+        function f1(){
+            document.write("Hello JavaScript<br>")
+        }
+
+        //2. 익명함수 
+        var f2 = function(){
+            document.write("익명함수 호출 <br>")
+        }
+    </script>
+</body>
+</html>

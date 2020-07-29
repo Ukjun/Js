@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--
+    함수를 호출할때 매개변수의 타입과 갯수에대해서 엄격하게 확인하지 않음
+    만약 변수가 남으면 undefined 으로 출력
+
+    -일반적으로 전역변수와 함수는 가독성을 위해서선언하고 사용하는 권장
+
+    hoist() : 끌어당긴다 
+
+    - 변수 선언 : var이라는 키워드 사용
+        --변수의 중복 선언 : 똑같은 이름으로 변수를 여러 개 선언함으로써 심각한 문제를 야기시킨다.
+
+    - 이러한 문제점을 개선하기 위하여 ES6버전부터 let, const로 구분해서 사용
+    - 현재 시점까지는 ES5버전을 많이 사용하고 있으며 , 
+    javascript을 활용한 프레임워크에서는 es6버전을 사용하고 있다.
+-->
+<body>
+    <script>
+        //매개변수가 3개인 함수
+
+        f1(10,20,30);
+
+
+        a = 35;
+        f1(a);
+
+        x = 40, y = 50, z= 60;
+        f1(x,y,z);
+
+
+        function f1(x,y,z){
+            document.write("첫번째 인수 x : " + x + "<br>")
+            document.write("두번째 인수 y : " + y + "<br>")
+            document.write("세번째 인수 z : " + z + "<br>")
+            document.write("<hr>")
+        }
+        
+        //함수 호출
+        // f1(10,20,30)
+        // f1(40,50)
+        // f1(10.5)
+
+
+        //변수의 중복선언 
+        var maxScore = 90;
+        document.write("MaxScore : " + maxScore + "<br>")
+
+
+
+        var maxScore = 120;
+        document.write("MaxScore : " + maxScore + "<br>")
+
+        // let을 사용 
+        let minScore = 50;
+        document.write("MinScore : "+ minScore + "<br>")
+
+
+        // 값의 변경은 가능하지만 중복선언은 불가하다.
+        minScore = 60;
+        document.write("MinScore : "+ minScore + "<br>")
+
+
+        //const 선언 : 중복선언 불가 , (상수)
+        const basicScore = 80;
+        document.write("BasicScore : "+ basicScore + "<br>")
+
+        //const basicScore = 90;
+        document.write("BasicScore : "+ basicScore + "<br>")
+    </script>
+</body>
+</html>

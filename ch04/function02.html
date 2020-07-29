@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        변수의 종류 : 
+        지역 변수(local variable) : 함수 안에서 선언되어 사용되는 변수들
+        - 웹브라우저에서 해당 웹페이즈를 사용하는 동안 계속 유지되고,
+        모든 자바스크립트에서 참조할 수 있음.
+        전역 변수(global variable) : 함수 밖에서 선언되어 사용되는 변수들
+        - 해당 함수가 실행되는 동안만 유지되고, 해당 함수 안의 코드들에서만 참조할 수 있다.
+
+
+        미리 정의하지 않고 특정 함수 내에서 변수 사용하게 되면, 
+        자바스크립트에서는 이 변수를 지역변수로 취급하고, 만약 함수 내에서 전역 변수로 사용하려면,
+        반드시 함수 밖에서 전역변수로 사용해야 가능하다.
+        
+    -->
+    <script>
+        var a = 'global_A'
+        var c = 'global_c'
+        function f1(){
+            var b = 'local_B'
+            var d = 'local_D'
+            document.write("함수 안에서 사용 <br>")
+            document.write(a+"<br>")
+            document.write(b+"<br>")
+            document.write(c+"<br>")
+        }
+        f1()
+        document.write("--------Out Function---------<br>")
+        document.write(a+"<br>")
+        document.write(b+"<br>")
+        document.write(d+"<br>")
+
+    </script>
+</body>
+</html>

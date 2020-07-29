@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //함수의 매개변수가 없을 때 , 호출시에 넘어오는 매개변수는 arguments라는
+        //함수 내부 배열로 저장된다.
+        //argument배열 : 함수 내부에 존재하는 배열 - 이 배열에 매개변수가 차례대로 저장
+        function sum(){
+            //var tot = arguments[0] + arguments[1] + arguments[2];
+            var tot=0;
+            for(var i=0; i<arguments.length; i++){
+                tot += arguments[i];
+            }
+
+            document.write("sum = " + tot + "<br>")
+        }
+        sum(10,20,30);
+        sum(10,20,30,40,50,100);
+    </script>
+</body>
+</html>
