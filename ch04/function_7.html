@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        재귀함수
+    -->
+    <script>
+        var num =0;
+        function testFnc(){
+            num++;
+            document.write(num+"<br>");
+            if(num ==10) return; 
+            // num이 10일때 종료되는 구문
+            // 이 구문을 적지않으면 무한루프가 된다
+            testFnc();
+        }
+        testFnc();
+    </script>
+</body>
+</html>

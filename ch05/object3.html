@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--
+
+-->
+<body>
+    <script>
+        function Student ( name, kor, eng, math){
+            this.name = name;
+            this.kor = kor;
+            this.eng = eng;
+            this.math = math;
+        this.sum = function(){
+            return (this.kor + this.eng + this.math);
+        }
+        this.avg = function(){
+            return (this.kor + this.eng + this.math)/3;
+        }
+        this.showinfo = function(){
+            return this.name + ", 총점 : " + this.sum() + " 평균 : " + this.avg()  + "<hr><br>"
+        }
+    }
+
+        var s1 = new Student("이익주",92,93,93);
+        document.write("이름 : " + s1.name + " 총점 : " + s1.sum()+ "평균 : " + s1.avg() +"<br>");
+
+
+        //객체 배열생성
+
+        var Students = [
+            new Student('이익준',92,93,93),
+            new Student('김준원',80,78,99),
+            new Student('임석형',99,60,73),
+            new Student('채송화',85,88,90),
+            new Student('안정원',95,96,98),
+        ]
+
+        for(var i =0; i<Students.length; i++){
+            //document.write(Students[i].name + ", 총점 : " + 
+            //Students[i].sum() + "평균: " + Students[i].avg()+"<br>")
+            document.write(Students[i].showinfo());
+        }
+    </script>
+</body>
+</html> 

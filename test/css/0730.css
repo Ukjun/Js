@@ -1,0 +1,76 @@
+.container{
+    width: 450px;
+    margin : 20px auto;
+    border: 1px solid black;
+}
+.day1{
+    text-align: center;
+    padding-top: 20px;
+    background-color: cornflowerblue;
+}
+.day1 h3{
+    font-size: 1.5em;
+    color: #666;
+}
+.day1 p{
+    font-weight: bold;
+    color: #222;
+    
+}
+.day1 .accent{
+    font-style: italic;
+    font-size: 1em;
+}
+.bar{
+    background-color: #747474;
+    color: #fff;
+    font-size: 1.1em;
+    padding-left: 45px;
+    margin :-17.5px auto;
+    padding: 2px;
+}
+.day2{
+    margin: 0px auto;
+    background-color: burlywood;
+}
+.day2 ul{
+    list-style: none;
+    height: 60px;
+    border-bottom: 1px dashed #cccccc;
+}
+.day2 .item_title{
+    float: left;
+    width: 160px;
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 40px;
+}
+.day2 .item_date{
+    color: #222;
+    font-size: 1.2em;
+    text-align: right;
+    line-height: 40px;
+    margin-right: 20px;
+}
+.day2 ul:last-child{
+    border :none;
+    margin-bottom: 0;
+}
+.day2 ul:first-child{
+    margin-top: 18px;
+}
+.input_day{
+    text-align: center;
+}
+.input_day ul{
+    list-style: none;
+    margin-right: 40px;
+    margin-top: 30px;
+}
+.input_day button{
+    width: 80px;
+    background-color: black;
+    color: white;
+    border: none;
+    height: 30px;
+}

@@ -1,30 +1,4 @@
 
-var now = new Date();
-var firstDate = new Date(prompt("날짜를 입력하세요"));
-console.log(firstDate);
-console.log(now);
-console.log(firstDate.toLocaleString());
-console.log(now.toLocaleString());
-var start = firstDate.getTime();
-var end = now.getTime();
-
-var pass = end-start;
-var pass_day = Math.floor(pass/1000/60/60/24);
-document.querySelector('#passday').innerHTML = pass_day;
-
-console.log(pass/1000+ "ms")
-
-
-
-calcDay(100);
-calcDay(200);
-calcDay(365);
-calcDay(500);
-calcDay(730);
-calcDay(1000);
-
-
-
 function calcDay(days){
     //전달받은 값을 밀리세컨드로 변환해야한다.
     var anni = days*24*60*60*1000 // 일을 밀리세컨드로 변경
@@ -53,4 +27,38 @@ function calcDay(days){
     }
 
     document.querySelector("#date"+ days).innerHTML = year + " " + month2 + " " +day2;
+}
+
+var start;
+function setAnniDay(){
+    var anni_day = document.querySelector('#anni_day').value;
+
+    if(anni_day == 0){
+        alert('Please select Date')
+    }
+
+    var now = new Date();
+    var firstDate = new Date('2019-12-25');
+    console.log(anni_day);
+    console.log(firstDate);
+    console.log(now);
+    console.log(firstDate.toLocaleString());
+    console.log(now.toLocaleString());
+    start = firstDate.getTime();
+    var end = now.getTime();
+
+    var pass = end-start;
+    var pass_day = Math.floor(pass/1000/60/60/24);
+    document.querySelector('#passday').innerHTML = pass_day;
+
+    console.log(pass/1000+ "ms")
+
+
+
+    calcDay(100);
+    calcDay(200);
+    calcDay(365);
+    calcDay(500);
+    calcDay(730);
+    calcDay(1000);
 }

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var f1 = function() { return "Hello!"}
+
+        let a1 = () => "Hello";
+
+
+        (function() {
+            return "Hello!";
+        }
+        ());
+
+        var f2 = function(name){
+            return name + "님 안녕하세요"
+        }
+
+        //변수의 표시 $
+        let a2 = (name) => `${name}님 안녕하세요?`
+        document.write(a2("육치성") + "<br>");
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="grlleryZone">
+        <p><img src="image/pic_1.jpg" id="photo" alt="" width="200px" height="200px"></p>
+        <p>
+            <button onclick="gallery(0)">이전</button>&nbsp;&nbsp;&nbsp;
+            <button onclick="gallery(1)">다음</button>
+        </p>
+    </div>
+    <script>
+        var num =1;
+        function gallery(dircet){
+            if(dircet ==1){
+                if(num==9) num=0; //num이 9일때 마지막 이미지이므로 동작을 안하게한다
+                num++;
+            }else if( dircet==0){
+                if(num==1) num=10;
+                num--;
+            }
+            var imgTag = document.getElementById('photo');
+            imgTag.setAttribute('src','image/pic_'+num+".jpg ")
+        }
+    </script>
+</body>
+</html>
