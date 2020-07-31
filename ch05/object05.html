@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function Member(no,name,age){
+        //     this.no = no;
+        //     this.name = name;
+        //     this.age = age;
+        //     this.showinfo = function() {
+        //     return ("회원번호 : " + this.no + "이름 : " + this.name + "나이 : " + this.age);
+        //     }
+        // }
+       
+        // var members=[
+        //     new Member(112233,'이익준',40),
+        //     new Member(224556,'김준완',42),
+        //     new Member(987654,'채송화',39),
+        //     new Member(123456,'양석형',41),
+        //     new Member(121344,'안정원',38)
+        // ];
+
+        // for(var i=0; i<members.length; i++){
+        //     document.write(members[i].showinfo() + "<br>");
+        // }
+
+        //객체 생성자 함수, 메소드를 호출( prototype)
+        // Member 생성자 함수의 메소드를 프로토타입으로 만들면 메소드가 하나만 만들어져서 모든 객체에서
+        // 공유하며 사용하게 된다. 메모리의 낭비를 막을수 있다.
+        function Member(no,name,age){
+            this.no = no;
+            this.name = name;
+            this.age = age;
+        }
+        Member.prototype.showInfo = function(){
+            return ("회원번호 : " + this.no + "이름 : " + this.name + "나이 : " + this.age);
+        }
+        var members=[
+            new Member(112233,'이익준',40),
+            new Member(224556,'김준완',42),
+            new Member(987654,'채송화',39),
+            new Member(123456,'양석형',41),
+            new Member(121344,'안정원',38)
+        ];
+        for(var i=0; i<members.length; i++){
+            document.write(members[i].showInfo() + "<br>");
+        }
+    </script>
+</body>
+</html>

@@ -13,11 +13,14 @@
     베팅결과를 주사위 이미지 아래에 출력한다.
     돈은 천단위 구분기호 출력 
     배팅금액의 입력상자는 빈문자열로 리셋
+
+    document.querySelector('#id태그') == $("#id태그").~~~~ //동일한 기능
 -->
 <style>
     .container{
         width: 600px;
         margin: 0 auto;
+        border: 1px solid black;
     }
     h1{
         text-align: center;
@@ -38,41 +41,68 @@
     .result h4{
         text-align: center;
     }
+    .info h2{
+        background-color: blanchedalmond;
+        color: crimson;
+        text-align: center;
+    }
 </style>
 <body>
     <div class="container">
         <h1>잭팟 게임</h1>
         <div class="info">
             <p>주사위를 던져주세요</p>
-            <p>같은 숫자 3개면 배팅 금액의 10배, </p>
-            <p>현재 보유 금액 : </p>
+            <p>같은 숫자 3개면 배팅 금액의 10배, 같은 숫자 2개면 배팅 금액의 2배</p>
+            <h2>뒷 일은 생각하셨나요?</h2>
+            <p>현재 보유 금액 : <span id= "now_mon"></span></p>
         </div>
 
         <div class="select">
             <label for="betting">배팅금액 입력</label>
-            <input type="text" id="input"><button onclick="clickBetting()">베팅하기</button>
+            <input type="text" id="input" onkeyup="this.value=number_format(this.value)">
+            <button onclick="clickBetting()">베팅하기</button>
         </div>
-        <div class="dice1">
-            <img src = "" alt="" width="150" id="dice1_img">&nbsp;&nbsp;&nbsp;
-        </div>
-        <div class="dice2">
-            <img src = "" alt="" width="150" id="dice2_img">&nbsp;&nbsp;&nbsp;
-        </div>
-        <div class="dice3">
-            <img src = "" alt="" width="150" id="dice3_img">
-        </div>
+            <div class="dice1">
+                <img src = "" alt="" width="150" id="dice1_img">&nbsp;&nbsp;&nbsp;
+            </div>
+            <div class="dice2">
+                <img src = "" alt="" width="150" id="dice2_img">&nbsp;&nbsp;&nbsp;
+            </div>
+            <div class="dice3">
+                <img src = "" alt="" width="150" id="dice3_img">
+            </div>
+        
         <div class="result">
             <h4 id="click_result"></h4>
         </div>
     </div>
     <script>
+        var start_num = Number(prompt("얼마를 들고오셨나요????"));
+        
+        numberFormat(now_mon);
+        now_mon.innerHTML = start_num;
+        var end_mon = start_num;
+        // function number_format(number)
+        // {
+        // number=number.replace(/\,/g,"");
+        // nArr = String(number).split('').join(',').split('');
+        // for( var i=nArr.length-1, j=1; i>=0; i--, j++)  if( j%6 != 0 && j%2 == 0) nArr[i] = '';
+        // return nArr.join('');
+        // }
+
+        function numberFormat(inputNumber) {
+             return inputNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }       
         function clickBetting(){
             var temp = [];
             var count =0;
             var click = document.querySelector('#input').value;
             console.log(click);
-            if (click==0){
+
+            if (click==0 || click%10>=1){
                 alert('Please Enter Betting')
+            }else if(click>end_mon){
+                alert('금액이 초과되었습니다.')
             }else{
                 for(var i =0; i<3; i++){
                 var ran = parseInt(Math.random()*6+1);
@@ -88,22 +118,27 @@
                         }
                     }
                 }
+                if(count==2){
+                alert('Jackpot!!!')
+                document.querySelector('#click_result').innerHTML = "당신이 얻은 금액은 " + numberFormat(click*10) + "원 입니다.";
+                end_mon = end_mon-click+(click*10);
+                //alert("Jackpot!!<br>당첨금의 10배인 " + money*10 +"만큼 드립니다!<br>");
+                }else if (count ==1){
+                alert('Half Jackpot!!!')
+                document.querySelector('#click_result').innerHTML = "당신이 얻은 금액은 " + numberFormat(click*2) + "원 입니다.";
+               // alert("Half Jackpot<br>당첨금의 2배인 " + money*2 +"만큼 드립니다!<br>")
+                end_mon = end_mon-click+(click*2);
+                }else{
+                document.querySelector('#click_result').innerHTML = "당신은" + numberFormat(click) + "원만큼 잃으셨습니다.";
+                end_mon = end_mon-click;
+            }
             }
             console.log(temp.length)
             console.log(count)
             
-            if(count==2){
-                alert('Jackpot!!!')
-                document.querySelector('#click_result').innerHTML = "당신의 금액은 " + click*10 + "원 입니다.";
-                //alert("Jackpot!!<br>당첨금의 10배인 " + money*10 +"만큼 드립니다!<br>");
-            }else if (count ==1){
-                alert('Half Jackpot!!!')
-                document.querySelector('#click_result').innerHTML = "당신의 금액은 " + click*2 + "원 입니다.";
-               // alert("Half Jackpot<br>당첨금의 2배인 " + money*2 +"만큼 드립니다!<br>")
-            }else{
-                document.querySelector('#click_result').innerHTML = "당신의 금액은 0 원 입니다.";
-            }
            
+            click = document.querySelector('#input').value = null;
+            document.querySelector("#now_mon").innerHTML = end_mon;
         }
     </script>
 </body>

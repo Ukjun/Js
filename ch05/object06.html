@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Student(kor,eng,math){
+            this.kor = kor;
+            this.eng = eng;
+            this.math =math;
+
+            
+        }
+        Student.prototype.sum = function(){
+                return this.kor + this.eng + this.math;
+            }
+            Student.prototype.avg = function(){
+                return (this.kor + this.eng + this.math)/3;
+            }
+        var students = [
+            new Student(100,89,79),
+            new Student(90,68,91),
+            new Student(80,74,79),
+            new Student(77,89,68),
+        ];
+        for(var i=0; i<students.length; i++){
+            document.write(students[i].sum() + "<br>")
+            document.write(students[i].avg() + "<br>")
+        }
+    </script>
+</body>
+</html>

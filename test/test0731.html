@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--
+    제목적고(밀리의 서재에서 읽은 책)
+    밑에 책 목록 ( 책이름과 옆에 확인 삭제라는 선택창 나타내기)
+-->
+<style>
+    .container{
+        width: 500px;
+        margin: 30px auto;
+    }
+    .list{
+        text-align: center;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>밀리의 서재에서 읽은 책</h1>
+        <label>책 이름  <input type="text" id = "book_title"></label><button></button>
+    </div>
+    <div class="list">
+        <p><span id="book_list1"></span></p><button id="confirm">확인</button>&nbsp;
+        <button id="delete">삭제</button>
+    </div>
+    <!-- <div class="list">
+        <p><span id="book_list2"></span></p><button id="confirm">확인</button>&nbsp;
+        <button id="delete">삭제</button>
+    </div>
+    <div class="list">
+        <p><span id="book_list3"></span></p><button id="confirm">확인</button>&nbsp;
+        <button id="delete">삭제</button>
+    </div>
+    <div class="list">
+        <p><span id="book_list4"></span></p><button id="confirm">확인</button>&nbsp;
+        <button id="delete">삭제</button>
+    </div> -->
+
+    <script>
+        function Book(title, author, volume, price){
+            this.title = title;
+            this.author = author;
+            this.volume = volume;
+            this.price = price;
+        }
+
+        var books = [
+            new Book('a','b','c',3000),
+            new Book('b','c','d',4000),
+            new Book('c','d','e',5000),
+            new Book('d','e','f',6000)
+        ];
+
+        Book.prototype.showInfo = function(){
+            return "제목 : " + this.title + "  /  저자 : " + this.author + "  /  가격 : " + this.price;
+        }
+
+        function onClick()
+        for(var i=0; i<books.length; i++){
+            document.querySelector('#book_list').innerHTML = books[i].showInfo();
+           // document.write(books[i].showInfo()+"<br>")
+             console.log(books[i].title);
+        }
+    </script>
+</body>
+</html>
