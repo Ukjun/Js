@@ -21,13 +21,13 @@
 <body>
     <div class="container">
         <h1>밀리의 서재에서 읽은 책</h1>
-        <label>책 이름  <input type="text" id = "book_title"></label><button></button>
-    </div>
-    <div class="list">
-        <p><span id="book_list1"></span></p><button id="confirm">확인</button>&nbsp;
-        <button id="delete">삭제</button>
-    </div>
-    <!-- <div class="list">
+        <label>책 이름  <input type="text" id ="book_title"></label><button onclick="bookInfo()">입력</button>
+    
+        <div id="list">
+            <p><span id="book_list1"></span></p><button id="confirm">확인</button>&nbsp;
+            <button id="delete">삭제</button>
+        </div>
+     <div class="list">
         <p><span id="book_list2"></span></p><button id="confirm">확인</button>&nbsp;
         <button id="delete">삭제</button>
     </div>
@@ -38,9 +38,16 @@
     <div class="list">
         <p><span id="book_list4"></span></p><button id="confirm">확인</button>&nbsp;
         <button id="delete">삭제</button>
-    </div> -->
-
+    </div> 
+    </div>
     <script>
+        function add_div(){
+            var div = document.createElement('div');
+
+            div.innerHTML = document.getElementById('#list').innerHTML;
+            document.getElementById('field').appendChild(div);
+        }
+
         function Book(title, author, volume, price){
             this.title = title;
             this.author = author;
@@ -59,12 +66,19 @@
             return "제목 : " + this.title + "  /  저자 : " + this.author + "  /  가격 : " + this.price;
         }
 
-        function onClick()
-        for(var i=0; i<books.length; i++){
-            document.querySelector('#book_list').innerHTML = books[i].showInfo();
-           // document.write(books[i].showInfo()+"<br>")
-             console.log(books[i].title);
+        function bookInfo(){
+         for(var i=0; i<books.length; i++){
+              document.querySelector('#list').innerHTML = books[i].showInfo() + "<br>";
+              //document.write(books[i].showInfo()+"<br>")
+              console.log(books[i].title);
+            }
         }
+        function add_book(){
+            var check = document.querySelector("#book_title").value;
+            new Book(check);
+        }
+        
+        
     </script>
 </body>
 </html>
