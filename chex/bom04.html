@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h3>윈도우 창 열기/닫기</h3>
+        <!-- <button onclick="w1=window.open('http://www.naver.com','','width=600, height=800')">창 열기</button> -->
+        <button id="openBtn">창 열기</button>
+        <button onclick="w1.window.close()">창 닫기</button>
+    </div>
+    <script>
+        var openBtn = document.querySelector('#openBtn');
+        openBtn.addEventListener("click",openWindow);
+
+        var sw = screen.width/2;
+        var sh = screen.height/2;
+        
+        
+
+        var h1 = screen.width/2 - sw/2;
+        var v1 = screen.height/2 - sh/1.5;
+
+        var ss = 'width=' + sw + 'height='+sh + 'left='+h1+'top='+v1;
+        function openWindow(){
+            window.open('http://www.naver.com','',ss);
+        }
+    </script>
+</body>
+</html>

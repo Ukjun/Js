@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        width: 500px;
+        margin: 0 auto;
+    }
+    /* #img1{
+        width: 70px;
+        height: 70px;
+    }
+    #text1{
+        background-color: orange;
+    } */
+</style>
+<body>
+    <div class="container">
+        <img src = "" alt="" id="img1">
+        <p id="text1">JavaScript Dom객체</p>
+    </div>
+    <script>
+        var img1 = document.querySelector("#img1"); //id값이 img1인 요소를 찾음
+        img1.src = "js.PNG" // 요소의 내용을 변경
+        img1.style.width = "70px"; // 요소의 스타일 속성을 변경
+        img1.style.height = "70px"; // 요소의 스타일 속성을 변경
+ 
+        var text1= document.querySelector("#text1"); //id값이 text1인 요소를 찾음
+        text1.innerHTML = "Javascript DOM 객체 " // 요소의 출력내용을 변경
+        text1.style.background = "orange" // 요소의 배경색을 변경
+    </script>
+</body>
+</html>

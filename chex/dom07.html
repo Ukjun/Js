@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        width: 600px;
+        margin: 0 auto;
+    }
+</style>
+<body>
+    <div class="container">
+        <p>버튼을 클릭하면 음표가 추가됩니다.</p>
+        <button id="mBtn1">음표 1추가</button>&nbsp;&nbsp;
+        <button id="mBtn2">음표 2추가</button>
+        <div id="box1"></div>
+        <hr>
+        <p>즐겁게 노래합시다</p>
+    </div>
+    <script>
+        var mBtn1 = document.querySelector("#mBtn1");
+        var mBtn2 = document.querySelector("#mBtn2");
+        var box1 = document.querySelector("#box1");
+
+        mBtn1.addEventListener("click",insertImg1);
+        mBtn2.addEventListener("click",insertImg2);
+
+        function insertImg1(){
+            var img1 = document.createElement('img');
+            img1.src = "m1.PNG";
+            box1.appendChild(img1)
+        }
+        function insertImg2(){
+            var img2 = document.createElement('img');
+            img2.src = "m2.PNG";
+            box1.appendChild(img2)
+        }
+        
+    </script>
+</body>
+</html>

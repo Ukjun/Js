@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 500px;
+            margin: 0 auto;
+        }
+        /* #box1{
+            margin: 10px 0;
+        } */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>자바스크립트 Document Object Model 객체</h3>
+        <div id = "box1">
+            자바스크립트 요소의 동적인 스타일 변경
+        </div>
+        <button id = btn1>스타일 변경</button>
+    </div>  
+    <script>
+        var box1 = document.querySelector("#box1");
+        var btn1 = document.querySelector("#btn1");
+
+        btn1.addEventListener("click",changeStyle);
+
+        function changeStyle(){
+            // 속성 변경방법 1
+            // box1.style.border = "1px solid black";
+            // box1.style.padding = "10px"
+            // box1.style.margin = "10px 0"
+            // box1.style.background = "lightyellow"
+            // box1.style.width = "400px"
+            // // box1.style.height = "200px"
+            // box1.style.lineHeight = "10px"
+            // box1.style.textAlign = "center" 
+            // // box1.style.fontSize = "1.2em"
+            // box1.style.fontWeight = "bold"
+            // box1.style.borderRadius = "50%"
+            // box1.style.boxShadow = "5px 5px 5px darkgray"
+            //속성을 지정할때 '-'를 못쓰고 붙여서 써야한다.(ex text-align =>textAlign)
+
+            // 속성 변경 방법 2
+            // style , 변경하고싶은 속성 + 값적기 (""꼭 넣어서 쓰기 끝에는 세미콜론 꼭 찍기!)
+            box1.setAttribute("style","border: 1px solid black")
+        }
+    </script>
+</body>
+</html>
