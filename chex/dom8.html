@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>특정 노드의 직전 형제 노드 추가</title>
+    <style>
+        .container{width:500px ; margin: 0 auto;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        추천 여행지 : <input type="text" id="t1">
+        <button id="btn1">국내</button>&nbsp;
+        <button id="btn2">국외</button>
+        <div id="d1">
+            <div>1.국내여행지</div>
+            <div id="d2">2.해외여행지</div>
+        </div>
+    </div>
+    <script>
+        var t1 = document.getElementById("t1");
+        var d1 = document.getElementById("d1");
+
+        var t2 = document.getElementById("t2");
+        var d2 = document.getElementById("d2");
+
+        var btn1 = document.getElementById('btn1');
+        var btn2 = document.getElementById('btn2');
+
+        btn1.addEventListener("click", addLocal);
+        btn2.addEventListener("click", addGlobal);
+
+        function addLocal(){
+            var newTag = document.createElement("div");
+            var txtNode = document.createTextNode(t1.value);
+            newTag.appendChild(txtNode);
+
+            //부모:d1       자식; newTag,d2 
+            d1.insertBefore(newTag, d2);
+            t1.value=""
+            t1.focus();
+        }
+
+        function addGlobal(newTag){
+            var newTag = document.createElement("div");
+            var txtNode = document.createTextNode(t1.value);
+            d2.appendChild(txtNode);
+            d2.insertBefore(newTag, d2);
+            t2.value=""
+            t2.focus();
+        }
+    </script>
+</body>
+</html>
