@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        width: 600px;
+        margin : 0 auto;
+    }
+</style>
+<body>
+    <div class="container">
+
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            //배열
+            var city =['서울','대구','대전','부산'];
+            $.each(city,function(index,value) {   
+                document.write(index + ":" + value+"<br>");
+            });
+
+            //객체
+            var subject = { subject : "html", grade:1, score:85};
+            // $.each(subject, function(key,value) {
+            //     document.write(key + ":" + value+"<br>");
+            // })
+            $(subject).each(function(key,value) {
+                document.write(key + " : " + value + "<br>")
+            })
+
+            // 객체의 배열
+            var obj = [{area:"서울"},{area:"부산"},{area:"전주"}];
+            $.each(obj, function(index, item) {
+                document.write(index + ":" + item.area+"<br>");
+            })
+            // $(obj).each(function(index,value) {
+            //     console.log(index + " : " + value + "<br>")
+            // })
+        });
+        
+    </script>
+</body>
+</html>

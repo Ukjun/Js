@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #first{
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 30px
+    }
+    a{
+        line-height: 30px;
+    }
+    table{
+        border-collapse: collapse;
+        margin: 0 auto;
+        width: 300px;
+    }
+    table tr td {
+        border : 1px solid black;
+    }
+    td {
+        text-align: center;
+    }
+    .itemRow:hover{
+        cursor: pointer;
+        animation-duration : 2s;
+        animation-name : ani_hover;
+    }
+    @keyframes ani_hover{
+        from{
+            background-color: white;
+        }to{
+            background-color: #ffffcc;
+        }
+    }
+    
+    </style>
+    </head>
+    <body>
+        <div id="first">게시판리스트
+        <!-- 주소값은 보통 서블릿으로 지정한다. -->
+        <br>
+        <a href="/boardWrite"><button>글 쓰기</button></a>
+        <table>
+        <tr>
+                <th>NO</th>
+                <th>제목</th>
+                <th>작성자</th>
+        </tr>
+        </table>
+    </div>
+  </body>
+</html>

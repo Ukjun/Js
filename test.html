@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     .container{
+         width: 400px;
+         border: 1px solid; 
+     }
+     ul{
+         list-style: none;
+     }
+     li label{
+         float: left;
+         width: 120px;
+         text-align: right;
+         padding-right: 10px;
+     }
+</style>
+<body>
+   <form>
+       <fieldset>
+            <legend>
+                <strong>게시판 작성</strong>
+            </legend>
+               <ul>
+                   <li><label>제목 : </label><input type="text" name="title" id="title" autofocus placeholder=""></li>
+                   <li><label>내용 : </label><textarea name="ctnt" id="ctnt" cols="50" rows="6"></textarea></li>
+                   <li><label>작성자 : </label><input type = "text" name="i_student" id="i_student"></li>
+               </ul>
+               <input type="submit" value="작성">           
+       </fieldset>
+       
+   </form>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "result" class="cls">
+        
+    </div>
+    <div id ="">
+        <label>
+            성인 : 
+            <select>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </label>
+        <label>
+            청소년 : 
+            <select>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </label>
+    </div>
+    <div>
+        <div>
+            <button>A1</button>
+            <button>A2</button>
+            <button>A3</button>
+            <button>A4</button>
+            <button>A5</button>
+        </div>
+        <div>
+            <button>B1</button>
+            <button>B2</button>
+            <button>B3</button>
+            <button>B4</button>
+            <button>B5</button>
+        </div>
+        <div>
+            <button>C1</button>
+            <button>C2</button>
+            <button>C3</button>
+            <button>C4</button>
+            <button>C5</button>
+        </div>
+    </div>
+    <script>
+        let ab = 10;
+        const cc = '가기';
+
+
+        //java의 printf기능
+        let re = `안녕하세요 제 나이는 ${ab}입니다.`; 
+        
+
+        // 
+        var fn1 =(n1,n2)=>{
+            return n1+n2;
+        }
+        var res = fn1(10,15);
+
+        // getElementById보다 querySelector를 최근에 많이 쓴다.
+        // querySelectorAll을 쓰면 배열자체를 가져온다
+
+        // 웹에  출력하는 문장 
+        result.innerHTML = re;
+        
+
+        function foo(){
+            //let color = 'dd';
+            //const color = 'ff'
+            if(true){
+                var color = 'blue';
+            }
+            console.log(`color: ${color}`)
+        }
+        foo();
+
+        var obj  ={
+            name: '홍길동',
+            age: 10,
+            showname: function(){
+                console.log('name : ' + this.name + ',age : ' + this.age)
+            }
+        }
+        obj.showname()
+
+
+        var obj2 = {
+            name : '홍길동',
+            age: 10,
+            showname: () =>{
+                console.log(this.name == '')
+                console.log('name : ' + this.name + ',age : ' + this.age)
+            }
+        }
+        obj2.showname();
+
+
+        // collback 예제
+        var fnsum = function(n1,n2){
+                return n1+n2
+            }
+
+        var fnMulti = function(n1,n2){
+            return n1*n2
+        }
+
+        function doCalc(fn,n1,n2){
+            //A
+            var con=20
+            var ps=10
+
+                
+            //B
+            var res = fn(con,ps)
+
+
+            //C BoardDAO에서 주로 씀 자주쓰는거는 냅두고 값이 바뀌는거 쿼리문같은거는 함수로 받는다
+            console.log('res :' + res)
+        }
+        doCalc(fnsum)
+        doCalc(fnMulti)
+
+
+    </script>
+</body>
+</html>
