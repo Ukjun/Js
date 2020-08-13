@@ -9,6 +9,13 @@
     .lbl:first-child{
         margin-right: 20px;
     }
+    button:not(:last-child){
+        margin-right: 30px;
+    }
+    button{
+        margin-bottom: 30px;
+    }
+    
 </style>
 <body>
     <div id="memberContainer"></div>
@@ -32,12 +39,52 @@
 
             return label_adult;
         }
+
+
+
+        function makeSeatBtns(arr,colCnt){
+            var total_div = document.createElement('div');
+            for(let i=0; i<arr.length; i++){
+                let ser_div2 = document.createElement('div');
+                let arrtext = arr[i];
+                let arr_count = colCnt[i];
+               for(let j=1; j<=arr_count; j++){
+                let seatBtns = document.createElement('button');
+                seatBtns.setAttribute('class','btn'+arrtext)
+                seatBtns.setAttribute('onclick','countClick')
+                seatBtns.innerText = `${arrtext}${j}`;
+                ser_div2.append(seatBtns);
+               }
+               total_div.append(ser_div2);
+           }
+           return total_div;
+        }
+        var click_count=0
+        function countClick(){
+            
+            click_count++;
+            console.log(click_count)
+            switch(click_count%2){
+                case 0:
+                    document.querySelector('button').style.backgroundColor= blue;
+                    break;
+                    case 1:
+                    document.querySelector('button').style.backgroundColor= red;
+                    break;
+            }
+        }
         function init(){
             var select_adult = makeSelect('성인','sel_adult_member_cnt')
             var select_teen = makeSelect('청소년','sel_teen_member_cnt')
 
             memberContainer.appendChild(select_adult);
             memberContainer.appendChild(select_teen);
+
+            var arr=['A','B','C','D','E','F']
+            var count = ['5','6','4','1','8','2']
+            var seat_btns = makeSeatBtns(arr,count);
+            // seatContainer.innerHTML = seat_btns;
+            seatContainer.appendChild(seat_btns);
         }
         init()
     </script>
