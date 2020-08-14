@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        width: 500px;
+        margin: 30px auto;
+        border: 1px solid black;
+    }
+    label{
+        float: left;
+        text-align: right;
+        width: 50px;
+        padding-right: 10px;
+    }
+    h1{
+        text-align: center;
+    }
+    .btn{
+        text-align: center;
+    }
+    button{
+        background-color: black;
+        color: white;
+    }
+    fieldset{
+        margin: 50px;
+    }
+    #tname, #tsubject{
+        color: green;
+    }
+</style>
+<body>
+    <div class="container">
+        <form name = "stuInfo">
+            <h1>수강신청</h1>
+            <fieldset>
+                <legend><strong>신청인</strong></legend>
+                <label id = "tname">이름</label><input type="text" id = "name"><br>
+                <label id = "tsubject">학과</label>
+                <select id="subject">
+                    <option value="메인">-----학과선택-----</option>
+                    <option value="컴퓨터공학과">컴퓨터공학과</option>
+                    <option value="데이터베이스">데이터베이스</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend><strong>신청 과목</strong></legend>
+                <p>이 달에 신청할 과목을 선택하세요 </p>
+                <input type="radio" name="p1" value="영어 회화">영어 회화
+                <input type="radio" name="p1" value="영어 문법">영어 문법
+                <input type="radio" name="p1" value="영어 작문">영어 작문
+            </fieldset>
+            <fieldset>
+                <legend><strong>메일링</strong></legend>
+                <p>메일로 받고 싶은 뉴스 주제를 선택해 주세요</p>
+                <input type="checkbox" name="p2" value="해외 뉴스">해외 뉴스
+                <input type="checkbox" name="p2" value="5분 회화">5분 회화
+                <input type="checkbox" name="p2" value="모닝 팝스">모닝 팝스
+            </fieldset>
+            <div class="btn">
+                <button id="cancel">취소</button>
+                <button id="submit">확인</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        var btn1 = document.querySelector("#submit")
+        var btn2 = document.querySelector("#cancel")
+        var subjects = document.getElementById("subject")
+        var output =""
+        var rad_check = document.getElementsByName("p1").length;
+        btn1.addEventListener("click",inputComplete)
+        btn2.addEventListener("click",cancel)
+        var rad_val=""
+
+        var box_check_length = document.getElementsByName("p2").length;
+        var box_check =""
+        
+        function inputComplete(){
+            var sname = document.stuInfo.name.value;
+            if(sname ==0){
+                alert('이름을 입력해주세요!')
+                return
+            }
+            output = subjects.options[subjects.selectedIndex].value;
+            for(var i=0; i<rad_check; i++){
+                if(document.getElementsByName("p1")[i].checked ==true){
+                    rad_val = document.getElementsByName("p1")[i].value;
+                }
+            }
+            for(var i=0; i<box_check_length; i++){
+                if(document.getElementsByName("p2")[i].checked==true){
+                    box_check += document.getElementsByName("p2")[i].value
+                    box_check += " "
+                }
+            }
+            console.log(box_check)
+            
+            alert('이름 :'+ sname + "\n학과 : " + output + "\n신청과목 : " + rad_val +"\n메일링 : " + box_check);
+        }
+        function cancel(){
+            document.stuInfo.name.value= null;
+            sname.value = null;
+            output.value = null;
+            box_check.value = null;
+        }
+    </script>
+</body>
+</html>

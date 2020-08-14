@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        width: 300px;
+        margin: 20px auto;
+        padding: 50px;
+        border: 1px solid black;
+    }
+    ul{
+        list-style: none;
+
+    }
+    li{
+        margin: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <img src="w3.PNG" width="50">    Web Programming !
+        <hr>
+        <div class="contain">
+            <input type="text" id="tripInput">
+            <button id="btnAdd">교과내용 추가</button>
+            <ul id="tripList">
+                <li>HTML5</li>
+                <li>CSS</li>
+                <li>Javascript</li>
+            </ul>
+        </div>
+        <script>
+            var tripInput = document.getElementById("tripInput");
+            var btnAdd = document.getElementById("btnAdd");
+            var tripList = document.getElementById("tripList");
+    
+            btnAdd.addEventListener("click", addTripList);
+    
+            function addTripList() {
+                var newTrip = document.createElement("li");
+                newTrip.setAttribute('class','ch_li')
+                var tripNode = document.createTextNode(tripInput.value);
+                $('.ch_li').css('color','blue')
+                $('.ch_li').css('font-weight','bold')
+                
+                newTrip.appendChild(tripNode); 
+                tripList.appendChild(newTrip); 
+                
+                tripInput.value = "";
+                tripInput.focus();
+            }
+    
+        </script>
+    </div>
+    
+</body>
+</html>

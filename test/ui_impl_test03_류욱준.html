@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        width: 600px;
+        margin: 20px auto;
+        padding: 50px;
+        border: 1px solid black;
+    }
+</style>
+<body>
+    <div class="container">
+        <h3>구매할 차종을 선택하시오.</h3>
+        <select id="cars" onchange="change()">
+            <option value="2020 그랜져 하이브리드">2020 그랜져 하이브리드</option>
+            <option value="2020 제네시스 G80">2020 제네시스 G80</option>
+            <option value="2020 펠리세이드">2020 펠리세이드</option>
+            <option value="2020 소나타 하이브리드 ">2020 소나타 하이브리드</option>
+            <option value="2019 QM6">2019 QM6</option>
+            <option value="2019 K7">2019 K7</option>     
+        </select>
+        <div> <img src=""id ="img1" alt="" width="200"></div>
+        <div id="msg">
+           
+        </div>
+    </div>
+    <script>
+        function change() {
+            var output_index = cars.selectedIndex;
+            console.log(output_index)
+            var choiceCar = document.getElementById("cars").value;
+            $("#cars").click(function () {
+                $("#img1").attr('src','car'+(output_index+1)+'.png')
+            })
+            document.getElementById("msg").innerHTML = choiceCar + "를 선택하셨습니다."
+        }
+    </script>
+</body>
+</html>

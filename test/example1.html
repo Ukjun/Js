@@ -15,7 +15,9 @@
     button{
         margin-bottom: 30px;
     }
-    
+    .test{
+        background-color: greenyellow;
+    }
 </style>
 <body>
     <div id="memberContainer"></div>
@@ -23,9 +25,10 @@
     <input type="hidden1" id="allSeatCnt" value="0">
     <script>
         let selectedSeats = []
+        //let div_test = document.getElementById('div')
         function switchSeat(seat){  
             let idx = selectedSeats.indexOf(seat);
-
+            let check = allSeatCnt.value;
             if(idx ==-1) { //기존에 선택이 안되어있엇음
                 //좌석 제한 갯수가 0일때
                 if(allSeatCnt.value==0){
@@ -34,11 +37,15 @@
                     return;
                 }
                 selectedSeats.push(seat)
+            //   div_test.classList.add('test');
+                // seat.classList.add('test')
                 //좌석을 하나 클릭했으니 제한수 하나 줄임
                 allSeatCnt.value--;
             }else{ //기존에 좌석이 선택되어있다는걸 의미 
+            
                 selectedSeats.splice(idx,1)
                 //기존에 선택되어있는걸 풀었으니 제한수 다시 복구 
+                // element.classList.remove('test');
                 allSeatCnt.value++;
             }
             console.log('selectedSeats : ' + selectedSeats);
@@ -83,7 +90,9 @@
                 seatBtns.setAttribute('class','btn')
                 //seatBtns.setAttribute('onclick','countClick')
                 // 좌석 번호 알림 
+                
                 const txt = `${arrtext}${j}`
+                seatBtns.setAttribute('id',`${txt}`)
                 seatBtns.setAttribute('onclick',`switchSeat('${txt}')`)
                 seatBtns.innerText = txt;
                 ser_div2.append(seatBtns);

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    #finish{
+        color: red;
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+    img{
+        border-radius: 40%;
+    }
+    .btn1{
+        background-color: black;
+        color: white;
+        height: 40px;
+    }
+</style>
+<body>
+    <img src="turtle.png" alt="" id="img1"><br>
+    <img src="rabbit.png" alt="" id="img2">
+    <p id="finish" hidden>비록 느리더라도 꾀부리지 않고 노력해야만 원하는 바를 이룰수 있습니다.</p>
+    <p><button class="btn1">달리기 시작</button></p>
+    <script>
+        $(document).ready(function() {
+            $(".btn1").click(function() {
+                $("#img1").delay(2000).animate({
+                    marginLeft:"800px",
+                    fontSize:"2em",
+                },10000).queue(function () {
+                    var flag = false;
+                    $("#finish").fadeToggle(2000, "linear")
+                    flag = !flag;  
+                });
+                $("#img2").animate({
+                    marginLeft:"200px",
+                    fontSize:"2em",
+                }, 2000);
+                
+                  
+            });
+        });
+        $(document).finish(function() {
+            
+        })
+        
+    </script>
+</body>
+</html>

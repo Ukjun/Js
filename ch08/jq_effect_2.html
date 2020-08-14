@@ -19,13 +19,12 @@
         // animate(스타일속성, 적용시간, 가속도, 콜백함수)
         $(document).ready(function() {
             // 1번 버튼
+            // 클릭을 하면 2초안에 500px을 이동하고 font-size는 2em이 된다.
             $(".btn1").click(function() {
                 $(".txt1").animate({
                     marginLeft:"500px",
                     fontSize:"2em",
-                }, 2000, "linear", function() {
-                    alert("애니메이션 완료!");
-                });
+                }, 2000);
             });
 
             // 2번 버튼 - 버튼을 누를때마다 누적해서 50씩 이동
