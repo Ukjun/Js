@@ -20,25 +20,36 @@
             }
             return myArr
         }
-        Array.prototype.arr2 = []
+        // Array.prototype.arr2 = []
+        // Array.prototype.filter2 = function(fn){
+        //     let myArr2 = []
+        //     for(let i=0; i<this.arr2.length; i++){
+        //         let item = this.arr2[i];
+        //         if(fn(item)){
+        //             myArr2.push(item);
+        //         }
+        //     }
+        //     return myArr2
+        // }
+        Array.prototype.arr = []
         Array.prototype.filter2 = function(fn){
-            let myArr = []
-            for(let i=0; i<this.arr2.length; i++){
-                let item = this.arr2[i];
-                let result = fn(item)
-                if(result){
-                    myArr.push(item);
+            let result = []
+            for(let i=0; i<this.arr.length; i++){
+                let item = this.arr[i]
+                if(fn(item)){
+                    result.push(item)
                 }
             }
-            return myArr
+            return result
         }
-
-        let arr3 = [10,14,13]
+        let arr3 = new Array()
+        arr3.arr = [10,14,13]
         var result3 = arr3.filter2(function(item){
-            return item % 2 != 0
+            return item % 2 == 0
         })
+        
         console.log('arr3 : ' + arr3)
-        console.log('result3 : ' + result3)
+        console.log('result3 : ' + `${result3}`)
 
         var arr = ['A','B','C']
         var result = arr.map(function(item){
